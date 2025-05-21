@@ -32,7 +32,6 @@ function Phone() {
         style={{
           border: "1px solid grey",
           borderRadius: ".25rem",
-          marginBottom: ".5rem",
           display: "flex",
           flexDirection: "column",
           overflowY: "scroll",
