@@ -9,7 +9,7 @@ function PhoneText({ highlight, children }: Props) {
       style={{
         backgroundColor: !highlight ? "transparent" : "blue",
         color: !highlight ? "black" : "white",
-        padding: ".25rem .5rem",
+        padding: ".5rem .5rem",
         borderRadius: ".25rem",
         display: "flex",
         alignItems: "center",
