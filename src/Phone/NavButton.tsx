@@ -11,9 +11,9 @@ function NavButton({ children, onClick }: Props) {
       <button
         style={{
           display: "flex",
-          height: "90%",
           alignItems: "center",
           justifyContent: "center",
+          height: "100%",
           width: "100%",
           borderRadius: ".5rem",
         }}

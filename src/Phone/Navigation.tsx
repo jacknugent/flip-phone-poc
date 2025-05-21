@@ -34,7 +34,7 @@ function Navigation({
         display: "grid",
         gridTemplateColumns: "1fr 1fr 1fr",
         marginBottom: "auto",
-        gap: "4px",
+        gap: "2px",
       }}
     >
       <div style={{ aspectRatio: "2" }} />
@@ -54,13 +54,13 @@ function Navigation({
         <IconArrowLeft size={25} />
       </NavButton>
       <NavButton onClick={onCenterClick}>
-        <IconCircleFilled size={25} />
+        <IconCircleFilled size={15} />
       </NavButton>
       <NavButton>
         <IconArrowRight size={25} />
       </NavButton>
       <NavButton onClick={onCallClick}>
-        <IconPhoneRinging size={25} />
+        <IconPhoneRinging size={20} />
       </NavButton>
       <NavButton
         onClick={() => {
@@ -72,7 +72,7 @@ function Navigation({
         <IconArrowDown size={25} />
       </NavButton>
       <NavButton>
-        <IconPhoneEnd size={25} />
+        <IconPhoneEnd size={20} />
       </NavButton>
     </div>
   );
