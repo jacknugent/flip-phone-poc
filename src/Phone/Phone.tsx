@@ -21,7 +21,7 @@ function Phone() {
         borderRadius: "1rem",
         padding: "3rem 1rem 1rem 1rem",
         aspectRatio: "9 / 16",
-        width: "clamp(200px, 30vw, 240px)",
+        width: "clamp(250px, 30vw, 300px)",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
@@ -35,7 +35,7 @@ function Phone() {
           display: "flex",
           flexDirection: "column",
           overflowY: "scroll",
-          height: "35%",
+          height: "40%",
         }}
       >
         <Screen row={row} options={options} screen={screen} />

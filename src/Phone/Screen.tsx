@@ -19,7 +19,7 @@ function Screen({ row, options, screen }: Props) {
         }}
       >
         <a
-          style={{ color: "white", padding: "1rem" }}
+          style={{ color: "black", padding: "1rem" }}
           href={`tel:${OFFLINE_PHONE_NUMBER}`}
         >
           {OFFLINE_PHONE_NUMBER}
@@ -35,7 +35,16 @@ function Screen({ row, options, screen }: Props) {
   }
 
   return (
-    <div style={{ background: "rgb(128, 123, 95)", height: "100%" }}>
+    <div
+      style={{
+        background: "rgb(128, 123, 95)",
+        height: "100%",
+        borderRadius: "0.25rem",
+        boxShadow: "inset 0 0 6px rgba(0, 0, 0, 0.6)",
+        border: "1px solid #333", // subtle frame inside the bezel
+        padding: "0.125rem",
+      }}
+    >
       {content}
     </div>
   );
