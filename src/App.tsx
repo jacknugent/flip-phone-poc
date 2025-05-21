@@ -10,7 +10,7 @@ function App() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        margin: "auto",
+        margin: "auto .5rem",
         maxWidth: "100%",
       }}
     >

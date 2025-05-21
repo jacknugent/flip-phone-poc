@@ -19,7 +19,7 @@ function Phone() {
       style={{
         background: "#222",
         borderRadius: "1rem",
-        padding: "3rem 1rem 1rem 1rem",
+        padding: "2rem 1rem 1rem 1rem",
         aspectRatio: "9 / 16",
         width: "clamp(250px, 30vw, 300px)",
         display: "flex",

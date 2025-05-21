@@ -34,6 +34,7 @@ function Navigation({
         display: "grid",
         gridTemplateColumns: "1fr 1fr 1fr",
         gap: "2px",
+        padding: "1rem 0",
       }}
     >
       <div style={{ aspectRatio: "2" }} />
