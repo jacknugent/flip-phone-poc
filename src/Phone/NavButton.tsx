@@ -1,8 +1,6 @@
-import type { ReactElement } from "react";
-
 type Props = {
   onClick?: () => void;
-  children: ReactElement;
+  children: any;
 };
 
 function NavButton({ children, onClick }: Props) {
@@ -15,9 +13,24 @@ function NavButton({ children, onClick }: Props) {
           justifyContent: "center",
           height: "100%",
           width: "100%",
-          borderRadius: ".5rem",
+          borderRadius: "0.5rem",
+          border: "1px solid #bbb",
+          background: "linear-gradient(to bottom, #eaeaea, #d4d4d4)",
+          boxShadow: `
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.2)
+  `,
+          fontWeight: "bold",
+          color: "#333",
+          cursor: "pointer",
+          transition: "transform 0.1s ease, box-shadow 0.1s ease",
         }}
         onClick={onClick}
+        onMouseDown={(e) =>
+          (e.currentTarget.style.transform = "translateY(2px)")
+        }
+        onMouseUp={(e) => (e.currentTarget.style.transform = "translateY(0)")}
       >
         {children}
       </button>
