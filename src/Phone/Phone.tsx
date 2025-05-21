@@ -20,7 +20,7 @@ function Phone() {
         borderRadius: ".5rem",
         padding: ".25rem",
         aspectRatio: "9 / 16",
-        width: "clamp(175px, 30vw, 400px)",
+        width: "clamp(200px, 30vw, 240px)",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
