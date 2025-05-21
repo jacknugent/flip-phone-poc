@@ -15,6 +15,7 @@ function NavButton({ children, onClick }: Props) {
           alignItems: "center",
           justifyContent: "center",
           width: "100%",
+          borderRadius: ".5rem",
         }}
         onClick={onClick}
       >

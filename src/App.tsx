@@ -10,7 +10,8 @@ function App() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "100%",
+        margin: "auto",
+        maxWidth: "100%",
       }}
     >
       <Phone />

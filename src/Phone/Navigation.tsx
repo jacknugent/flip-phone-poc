@@ -33,7 +33,7 @@ function Navigation({
       style={{
         display: "grid",
         gridTemplateColumns: "1fr 1fr 1fr",
-        margin: "auto",
+        marginBottom: "auto",
         gap: "4px",
       }}
     >

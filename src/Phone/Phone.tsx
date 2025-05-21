@@ -19,11 +19,11 @@ function Phone() {
         border: "1px solid black",
         borderRadius: ".5rem",
         padding: ".25rem",
-        justifyContent: "center",
-        alignItems: "center",
+        aspectRatio: "9 / 16",
+        width: "clamp(300px, 30vw, 400px)",
+        display: "flex",
         flexDirection: "column",
-        width: "100%",
-        maxWidth: "175px",
+        justifyContent: "space-between",
       }}
     >
       <div
@@ -33,7 +33,8 @@ function Phone() {
           marginBottom: ".25rem",
           display: "flex",
           flexDirection: "column",
-          height: "150px",
+          height: "35%",
+          overflowY: "scroll",
         }}
       >
         <Screen row={row} options={options} screen={screen} />
