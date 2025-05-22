@@ -6,11 +6,28 @@ type Props = {
   row: number;
   options: readonly ScreenOptions[];
   screen: Screens;
+  keypadNum: string;
 };
 
-function Screen({ row, options, screen }: Props) {
+function formatPhoneNumberProgressive(input: string): string {
+  const digits = input.replace(/\D/g, ""); // remove non-digits
+
+  if (digits.length === 0) return "";
+  if (digits.length <= 3) return `(${digits}`;
+  if (digits.length <= 6) return `(${digits.slice(0, 3)})-${digits.slice(3)}`;
+  if (digits.length <= 10)
+    return `(${digits.slice(0, 3)})-${digits.slice(3, 6)}-${digits.slice(6)}`;
+
+  // If longer than 10 digits, just append the rest (or truncate, depending on your needs)
+  return `(${digits.slice(0, 3)})-${digits.slice(3, 6)}-${digits.slice(
+    6,
+    10
+  )} x${digits.slice(10)}`;
+}
+
+function Screen({ row, options, screen, keypadNum }: Props) {
   let content;
-  if (screen === "MONTH OFFLINE") {
+  if (screen === "MONTH OFFLINE" || keypadNum) {
     content = (
       <div
         style={{
@@ -30,7 +47,9 @@ function Screen({ row, options, screen }: Props) {
             textAlign: "end",
           }}
         >
-          {OFFLINE_PHONE_NUMBER}
+          {keypadNum
+            ? formatPhoneNumberProgressive(keypadNum)
+            : OFFLINE_PHONE_NUMBER}
         </div>
       </div>
     );
@@ -51,6 +70,7 @@ function Screen({ row, options, screen }: Props) {
         boxShadow: "inset 0 0 6px rgba(0, 0, 0, 0.6)",
         border: "1px solid #333", // subtle frame inside the bezel
         padding: "0.125rem",
+        fontSize: "1.25rem",
       }}
     >
       {content}

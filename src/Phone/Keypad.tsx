@@ -1,6 +1,11 @@
+import type { Dispatch, SetStateAction } from "react";
 import NavButton from "./NavButton";
 
-function Keybad() {
+type Props = {
+  setKeypadNum: Dispatch<SetStateAction<string>>;
+};
+
+function Keybad({ setKeypadNum }: Props) {
   return (
     <div
       style={{
@@ -9,15 +14,17 @@ function Keybad() {
         gap: "2px",
       }}
     >
-      <NavButton>1</NavButton>
-      <NavButton>2</NavButton>
-      <NavButton>3</NavButton>
-      <NavButton>4</NavButton>
-      <NavButton>5</NavButton>
-      <NavButton>6</NavButton>
-      <NavButton>7</NavButton>
-      <NavButton>8</NavButton>
-      <NavButton>9</NavButton>
+      {Array.from({ length: 9 }, (_, i) => i + 1).map((i) => (
+        <NavButton
+          onClick={() =>
+            setKeypadNum((keypadNum) =>
+              keypadNum.length === 10 ? keypadNum : (keypadNum += i)
+            )
+          }
+        >
+          {i}
+        </NavButton>
+      ))}
     </div>
   );
 }

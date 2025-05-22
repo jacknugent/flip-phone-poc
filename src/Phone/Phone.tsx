@@ -13,6 +13,7 @@ export type Screens = "Home" | ScreenOptions;
 function Phone() {
   const [row, setRow] = useState(0);
   const [screen, setScreen] = useState<Screens>("Home");
+  const [keypadNum, setKeypadNum] = useState("");
 
   return (
     <div
@@ -39,13 +40,21 @@ function Phone() {
           height: "40%",
         }}
       >
-        <Screen row={row} options={options} screen={screen} />
+        <Screen
+          row={row}
+          options={options}
+          screen={screen}
+          keypadNum={keypadNum}
+        />
       </div>
       <Navigation
         row={row}
         setRow={setRow}
         textCount={TEXT_COUNT}
-        onBackClick={() => setScreen("Home")}
+        onBackClick={() => {
+          setScreen("Home");
+          setKeypadNum("");
+        }}
         onCenterClick={() => setScreen(options[row])}
         onCallClick={() => {
           if (screen === "MONTH OFFLINE") {
@@ -53,7 +62,7 @@ function Phone() {
           }
         }}
       />
-      <Keypad />
+      <Keypad setKeypadNum={setKeypadNum} />
     </div>
   );
 }
