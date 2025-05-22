@@ -36,18 +36,17 @@ function Screen({ row, options, screen, keypadNum }: Props) {
         style={{
           display: "flex",
           margin: "auto",
-          alignItems: "end",
-          justifyContent: "start",
+          alignItems: "center",
+          justifyContent: "center",
           height: "100%",
           width: "100%",
         }}
       >
         <div
           style={{
-            color: "black",
-            padding: "1rem",
-            width: "100%",
             textAlign: "end",
+            padding: "1rem",
+            fontSize: screen === ScreenOptions.CONTACT ? "1.125rem" : "inherit",
           }}
         >
           {screen === ScreenOptions.CONTACT

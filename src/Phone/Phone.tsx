@@ -27,8 +27,8 @@ function Phone() {
         borderRadius: "2rem",
         padding: "2rem",
         margin: ".5rem",
-        aspectRatio: "9 / 17",
-        width: "clamp(250px, 100vw, 315px)",
+        aspectRatio: "9 / 20",
+        width: "clamp(250px, 100vw, 275px)",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
@@ -42,7 +42,7 @@ function Phone() {
           display: "flex",
           flexDirection: "column",
           overflowY: "scroll",
-          height: "40%",
+          height: "50%",
         }}
       >
         <Screen
@@ -52,26 +52,35 @@ function Phone() {
           keypadNum={keypadNum}
         />
       </div>
-      <Navigation
-        row={row}
-        setRow={setRow}
-        textCount={TEXT_COUNT}
-        onBackClick={() => {
-          setScreen("Home");
-          setKeypadNum("");
+      <div
+        style={{
+          height: "50%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-around",
         }}
-        onCenterClick={() => setScreen(options[row])}
-        onCallClick={() => {
-          if (screen === ScreenOptions.MONTH_OFFLINE) {
-            window.location.href = `tel:${OFFLINE_PHONE_NUMBER}`;
-            return;
-          }
-          if (keypadNum?.length === 10) {
-            window.location.href = `tel:${keypadNum}`;
-          }
-        }}
-      />
-      <Keypad setKeypadNum={setKeypadNum} />
+      >
+        <Navigation
+          row={row}
+          setRow={setRow}
+          textCount={TEXT_COUNT}
+          onBackClick={() => {
+            setScreen("Home");
+            setKeypadNum("");
+          }}
+          onCenterClick={() => setScreen(options[row])}
+          onCallClick={() => {
+            if (screen === ScreenOptions.MONTH_OFFLINE) {
+              window.location.href = `tel:${OFFLINE_PHONE_NUMBER}`;
+              return;
+            }
+            if (keypadNum?.length === 10) {
+              window.location.href = `tel:${keypadNum}`;
+            }
+          }}
+        />
+        <Keypad setKeypadNum={setKeypadNum} />
+      </div>
     </div>
   );
 }
