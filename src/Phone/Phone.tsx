@@ -19,8 +19,8 @@ function Phone() {
     <div
       style={{
         background: "#333",
-        borderRadius: "1rem",
-        padding: "2rem 1rem 1rem 1rem",
+        borderRadius: "2rem",
+        padding: "2rem",
         margin: ".5rem",
         aspectRatio: "9 / 16",
         width: "clamp(225px, 100vw, 300px)",
