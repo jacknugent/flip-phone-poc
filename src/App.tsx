@@ -1,7 +1,7 @@
 import Phone from "./Phone/Phone";
 import "./App.css";
 
-export const OFFLINE_PHONE_NUMBER = "555-555-5555";
+export const OFFLINE_PHONE_NUMBER = "844-633-5463";
 
 function App() {
   return (

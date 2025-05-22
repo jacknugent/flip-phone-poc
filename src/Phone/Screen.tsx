@@ -26,7 +26,7 @@ function formatPhoneNumberProgressive(input: string): string {
 
 function Screen({ row, options, screen, keypadNum }: Props) {
   let content;
-  if (screen === "MONTH OFFLINE" || keypadNum) {
+  if (screen === "MONTH OFFLINE" || screen === "CONTACT" || keypadNum) {
     content = (
       <div
         style={{
@@ -46,9 +46,11 @@ function Screen({ row, options, screen, keypadNum }: Props) {
             textAlign: "end",
           }}
         >
-          {keypadNum
+          {screen === "CONTACT"
+            ? "team@offline.community"
+            : keypadNum
             ? formatPhoneNumberProgressive(keypadNum)
-            : OFFLINE_PHONE_NUMBER}
+            : `Call ${OFFLINE_PHONE_NUMBER}`}
         </div>
       </div>
     );
