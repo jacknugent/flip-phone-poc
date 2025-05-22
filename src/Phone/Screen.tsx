@@ -16,14 +16,22 @@ function Screen({ row, options, screen }: Props) {
         style={{
           display: "flex",
           margin: "auto",
+          alignItems: "end",
+          justifyContent: "start",
+          height: "100%",
+          width: "100%",
         }}
       >
-        <a
-          style={{ color: "black", padding: "1rem" }}
-          href={`tel:${OFFLINE_PHONE_NUMBER}`}
+        <div
+          style={{
+            color: "black",
+            padding: "1rem",
+            width: "100%",
+            textAlign: "end",
+          }}
         >
           {OFFLINE_PHONE_NUMBER}
-        </a>
+        </div>
       </div>
     );
   } else {
