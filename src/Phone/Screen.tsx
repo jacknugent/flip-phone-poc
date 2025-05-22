@@ -71,7 +71,7 @@ function Screen({ row, options, screen, keypadNum }: Props) {
         boxShadow: "inset 0 0 6px rgba(0, 0, 0, 0.6)",
         border: "1px solid #333",
         padding: "0.125rem",
-        fontSize: "1.25rem",
+        fontSize: "1.125rem",
       }}
     >
       {content}
