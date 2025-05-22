@@ -18,7 +18,7 @@ function Phone() {
   return (
     <div
       style={{
-        background: "#222",
+        background: "#333",
         borderRadius: "1rem",
         padding: "2rem 1rem 1rem 1rem",
         margin: ".5rem",
