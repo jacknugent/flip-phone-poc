@@ -10,7 +10,7 @@ type Props = {
 };
 
 function formatPhoneNumberProgressive(input: string): string {
-  const digits = input.replace(/\D/g, ""); // remove non-digits
+  const digits = input.replace(/\D/g, "");
 
   if (digits.length === 0) return "";
   if (digits.length <= 3) return `(${digits}`;
@@ -18,7 +18,6 @@ function formatPhoneNumberProgressive(input: string): string {
   if (digits.length <= 10)
     return `(${digits.slice(0, 3)})-${digits.slice(3, 6)}-${digits.slice(6)}`;
 
-  // If longer than 10 digits, just append the rest (or truncate, depending on your needs)
   return `(${digits.slice(0, 3)})-${digits.slice(3, 6)}-${digits.slice(
     6,
     10
@@ -68,7 +67,7 @@ function Screen({ row, options, screen, keypadNum }: Props) {
         height: "100%",
         borderRadius: "0.25rem",
         boxShadow: "inset 0 0 6px rgba(0, 0, 0, 0.6)",
-        border: "1px solid #333", // subtle frame inside the bezel
+        border: "1px solid #333",
         padding: "0.125rem",
         fontSize: "1.25rem",
       }}

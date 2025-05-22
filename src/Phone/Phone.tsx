@@ -22,7 +22,7 @@ function Phone() {
         borderRadius: "2rem",
         padding: "2rem",
         margin: ".5rem",
-        aspectRatio: "9 / 16",
+        aspectRatio: "9 / 18",
         width: "clamp(225px, 100vw, 300px)",
         display: "flex",
         flexDirection: "column",
@@ -59,6 +59,10 @@ function Phone() {
         onCallClick={() => {
           if (screen === "MONTH OFFLINE") {
             window.location.href = `tel:${OFFLINE_PHONE_NUMBER}`;
+            return;
+          }
+          if (keypadNum?.length === 10) {
+            window.location.href = `tel:${keypadNum}`;
           }
         }}
       />
