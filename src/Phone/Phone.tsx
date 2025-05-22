@@ -23,7 +23,7 @@ function Phone() {
         padding: "2rem",
         margin: ".5rem",
         aspectRatio: "9 / 18",
-        width: "clamp(225px, 100vw, 300px)",
+        width: "clamp(235px, 100vw, 300px)",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",

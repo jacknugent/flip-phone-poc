@@ -50,7 +50,7 @@ function Screen({ row, options, screen, keypadNum }: Props) {
             ? "team@offline.community"
             : keypadNum
             ? formatPhoneNumberProgressive(keypadNum)
-            : `Call ${OFFLINE_PHONE_NUMBER}`}
+            : OFFLINE_PHONE_NUMBER}
         </div>
       </div>
     );
