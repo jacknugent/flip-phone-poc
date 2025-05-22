@@ -4,11 +4,16 @@ import Navigation from "./Navigation";
 import { OFFLINE_PHONE_NUMBER } from "../App";
 import Keypad from "./Keypad";
 
-const TEXT_COUNT = 3;
+export enum ScreenOptions {
+  MONTH_OFFLINE = "MONTH OFFLINE",
+  ABOUT = "ABOUT",
+  CONTACT = "CONTACT",
+}
 
-const options = ["MONTH OFFLINE", "ABOUT", "CONTACT"] as const;
-export type ScreenOptions = (typeof options)[number];
 export type Screens = "Home" | ScreenOptions;
+
+const options = Object.values(ScreenOptions);
+const TEXT_COUNT = options.length;
 
 function Phone() {
   const [row, setRow] = useState(0);
@@ -22,8 +27,8 @@ function Phone() {
         borderRadius: "2rem",
         padding: "2rem",
         margin: ".5rem",
-        aspectRatio: "9 / 18",
-        width: "clamp(235px, 100vw, 300px)",
+        aspectRatio: "9 / 17",
+        width: "clamp(250px, 100vw, 315px)",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
@@ -57,7 +62,7 @@ function Phone() {
         }}
         onCenterClick={() => setScreen(options[row])}
         onCallClick={() => {
-          if (screen === "MONTH OFFLINE") {
+          if (screen === ScreenOptions.MONTH_OFFLINE) {
             window.location.href = `tel:${OFFLINE_PHONE_NUMBER}`;
             return;
           }

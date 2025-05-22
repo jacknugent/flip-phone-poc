@@ -1,5 +1,5 @@
 import { OFFLINE_PHONE_NUMBER } from "../App";
-import type { ScreenOptions, Screens } from "./Phone";
+import { ScreenOptions, type Screens } from "./Phone";
 import PhoneText from "./PhoneText";
 
 type Props = {
@@ -26,7 +26,11 @@ function formatPhoneNumberProgressive(input: string): string {
 
 function Screen({ row, options, screen, keypadNum }: Props) {
   let content;
-  if (screen === "MONTH OFFLINE" || screen === "CONTACT" || keypadNum) {
+  if (
+    screen === ScreenOptions.MONTH_OFFLINE ||
+    screen === ScreenOptions.CONTACT ||
+    keypadNum
+  ) {
     content = (
       <div
         style={{
@@ -46,7 +50,7 @@ function Screen({ row, options, screen, keypadNum }: Props) {
             textAlign: "end",
           }}
         >
-          {screen === "CONTACT"
+          {screen === ScreenOptions.CONTACT
             ? "team@offline.community"
             : keypadNum
             ? formatPhoneNumberProgressive(keypadNum)
@@ -71,7 +75,7 @@ function Screen({ row, options, screen, keypadNum }: Props) {
         boxShadow: "inset 0 0 6px rgba(0, 0, 0, 0.6)",
         border: "1px solid #333",
         padding: "0.125rem",
-        fontSize: "1.125rem",
+        fontSize: "1.25rem",
       }}
     >
       {content}
